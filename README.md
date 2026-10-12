@@ -6,6 +6,8 @@
 
 ![Act IV preview](docs/preview-act4.png)
 
+**▶ Live version: https://halloween-window.vercel.app** (hosted on Vercel and redeployed automatically on every push to `main`).
+
 > The previews in this README show the four glass panes of each scene, with the rail and wall strip left black. That is how the paper lights up.
 
 ---
@@ -61,6 +63,8 @@ git clone https://github.com/hectorir/Halloween-Window.git
 cd Halloween-Window
 open index.html          # macOS. Or open the file in any modern browser.
 ```
+
+Or just open the live version above. Calibration and the mirror setting are stored per web address, so the online copy and a local `file://` copy keep separate settings. Pick one for the nightly show and always open it from that same address.
 
 Then:
 
