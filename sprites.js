@@ -62,9 +62,10 @@ function bat(g,x,y,s,f,col='#b266ff'){
 function spider(g,x,y,s,t,col='#8cff4f'){
   g.save();g.translate(x,y);g.scale(s,s);g.shadowColor=col;g.shadowBlur=14;
   for(const d of[-1,1])for(let i=0;i<4;i++){
-    const w=M.sin(t*9+i*1.3+(d>0?1.6:0))*5,y0=-6+i*5;
-    ln(g,[[d*8,y0],[d*(26+i%2*8),y0-18+i*4+w],[d*(46+i%2*10),y0+6+i*9+w*1.5]],col,4)}
-  ell(g,0,6,15,19,col);ell(g,0,-16,10,9,col);g.shadowBlur=0;ell(g,-4,-18,2.5,3,'#f22');ell(g,4,-18,2.5,3,'#f22');ell(g,0,8,5,9,'rgba(0,40,0,.55)');g.restore();
+    const w=M.sin(t*9+i*1.3+(d>0?1.6:0))*5,y0=-8+i*6;
+    ln(g,[[d*9,y0],[d*(36+i%2*6),y0-26+i*10+w],[d*(64+(i==1||i==2?10:0)),(i-1.5)*26+w*1.5]],col,5.5)}
+  ell(g,0,8,18,23,col);ell(g,0,-17,11,10,col);g.shadowBlur=0;ell(g,0,10,6,11,'rgba(0,45,0,.6)');
+  for(const e of[-5,5]){ell(g,e,-20,2.8,3.4,'#f22');ell(g,e*.5,-14,1.8,2.2,'#f66')}g.restore();
 }
 function skull(g,x,y,s,o={}){
   const c=o.col||'#f4f0e0',j=o.jaw||0,K='#10101c';

@@ -26,6 +26,11 @@ S(4,'Monster Stomp',120,'A',(g,t)=>{
   g.save();g.translate((rr(M.floor(t*30))-.5)*14*sh,(rr(M.floor(t*30)+9)-.5)*14*sh);
   [[266,0],[914,1]].forEach(([x,d])=>{const l=lift(d),by=1040-l;g.fillStyle='#000';g.beginPath();g.moveTo(x-90,-60);g.lineTo(x+90,-60);g.lineTo(x+84,by-80);g.lineTo(x+140,by-30);g.lineTo(x+150,by);g.lineTo(x-150,by);g.lineTo(x-140,by-30);g.lineTo(x-84,by-80);g.closePath();g.fill();
     g.strokeStyle='#ff9a5a';g.lineWidth=3;g.shadowColor='#ff6a3d';g.shadowBlur=12;g.stroke();g.shadowBlur=0;
+    for(let q=0;q<8;q++)for(const sd of[-1,1])poly(g,[[x+sd*88,by-110-q*95],[x+sd*(88+20),by-150-q*95],[x+sd*86,by-175-q*95]],'#000');
+    g.save();g.shadowColor='#ff6a3d';g.shadowBlur=10;ln(g,[[x-40,by-360],[x-10,by-320],[x-34,by-270]],'#ff7a3a',4);ln(g,[[x+30,by-460],[x+52,by-390]],'#ff7a3a',3);
+    g.fillStyle='#2a2a30';g.fillRect(x-96,by-200,192,28);g.strokeStyle='#a0a0b0';g.lineWidth=3;g.strokeRect(x-96,by-200,192,28);
+    for(const dx of[-60,0,60])poly(g,[[x+dx-14,by-200],[x+dx+14,by-200],[x+dx,by-232]],'#a0a0b0');
+    ln(g,[[x-90,by-172],[x-100+M.sin(t*3+x)*10,by-140],[x-90,by-110]],'#a0a0b0',5);g.restore();
     for(const dx of[-100,-50,0,50,100])poly(g,[[x+dx-16,by],[x+dx+16,by],[x+dx,by+22]],'#fff4d0');if(l<8&&walking)rg(g,x,1040,150+sh*80,'70,40,50',.5*sh)});
   g.fillStyle='#000';g.beginPath();g.moveTo(90,-20);for(let x=90;x<=1090;x+=50)g.lineTo(x,200+(x/50%2?40:0)+M.sin(t*2+x)*8);g.lineTo(1090,-20);g.fill();
   const fy=cy<38?-320:cy<42?lerp(-320,0,sm((cy-38)/4)):cy<53?0:lerp(0,-320,sm((cy-53)/4)),roar=sm(pr(cy,50,51.5))*(1-sm(pr(cy,53,54)));
@@ -76,8 +81,8 @@ function candy(g,x,y,s,r,col){g.save();g.translate(x,y);g.rotate(r);g.scale(s,s)
 S(4,'Pumpkin Inflation',120,'A',(g,t)=>{
   vg(g,0,0,W,H,'#2a0d3a','#0a0316');stars(g,0,0,W,H,t,60);
   const P=24,cy=t%P,cols=['#ff4fd0','#37e6ff','#ffd23f','#8cff4f','#ff6a3d'];
-  if(cy<17){const u=pr(cy,1.5,16),s=1.4+10.8*u*u*(3-2*u)*1+M.sin(cy*3)*.04*u,sh=cy>14?(rr(M.floor(t*40))-.5)*18:0;
-    const ap=sm(pr(cy,0,1.2)),mv=sm(pr(u,.05,.65)),px=lerp(266,590,mv),py=lerp(800,620,mv);g.save();g.translate(sh,sh*.6);pumpkin(g,px,py,s*ap,{e:lerp(1,1.5,u),m:.1+u*.9,k:1,lit:lerp(1,.4,u)});
+  if(cy<17){const u=pr(cy,1.5,16),s=1.4+7.2*u*u*(3-2*u)+M.sin(cy*3)*.04*u,sh=cy>14?(rr(M.floor(t*40))-.5)*18:0;
+    const ap=sm(pr(cy,0,1.2)),mv=sm(pr(u,.05,.65)),px=lerp(266,590,mv),py=lerp(800,620,mv);g.save();g.translate(sh,sh*.6);pumpkin(g,px,py,s*ap,{e:lerp(1,1.5,u),m:.1+u*.9,k:1,lit:lerp(1,.3,u)});
     if(u>.1&&u<.97)for(let j=0;j<4;j++){const q=(cy*1.2+j*.25)%1;ell(g,px+(j-1.5)*60*s*.3,py-50*s*.6+q*40*s*.3,3*s*.3,5*s*.3,`rgba(150,220,255,${1-q})`)}g.restore()}
   if(cy>=17){const a=cy-17;if(a<.7){g.fillStyle=`rgba(255,200,120,${.5*(1-a/.7)})`;g.fillRect(0,0,W,H)}
     for(let j=0;j<70;j++){const x0=rr(j)*W,v=380+rr(j+3)*300,y=-80-rr(j+7)*500+a*v;

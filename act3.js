@@ -95,13 +95,14 @@ S(3,'Crows on the Rail',100,'A',(g,t)=>{
 });
 
 S(3,'Creeping Tendrils',100,'A',(g,t)=>{
-  vg(g,0,0,W,H,'#0a2a1a','#030c06');for(let j=0;j<4;j++)rg(g,150+j*300,300+M.sin(t*.4+j)*100,380,'90,255,150',.1);fog(g,0,0,W,H,t,'120,255,170',.05,8);
+  vg(g,0,0,W,H,'#0a2a1a','#030c06');for(let j=0;j<4;j++)rg(g,150+j*300,300+M.sin(t*.4+j)*100,380,'90,255,150',.1);fog(g,0,0,W,H,t,'120,255,170',.05,8);rg(g,W/2,H/2,700,'60,200,120',.18);
   const P=50,cy=t%P,gr=sm(pr(cy,0,24))*(1-sm(pr(cy,40,50)));
-  [[120,1080,-.9],[560,1080,0],[1060,1080,.9],[W/2,0,.2]].forEach(([bx,by,bias],j)=>{
+  [[120,1080,-.9],[330,1080,-.4],[560,1080,0],[860,1080,.4],[1060,1080,.9],[W/2,0,.2]].forEach(([bx,by,bias],j)=>{
     const n=M.floor(46*gr*(j==3?.7:1));let x=bx,y=by,a=(by?-M.PI/2:M.PI/2)+bias*.6;const pts=[];
-    for(let q=0;q<n;q++){a+=M.sin(t*.8+q*.2+j*2)*.12;x+=M.cos(a)*24;y+=M.sin(a)*24;pts.push([x,y,34-q*.55])}
-    for(const[col,ex]of[['rgba(130,255,190,.6)',7],['#000',0]])pts.forEach(([px,py,wd],q)=>{if(q)ln(g,[[pts[q-1][0],pts[q-1][1]],[px,py]],col,M.max(4,wd)+ex)});
-    if(n>2){const l=pts[n-1];eye(g,l[0],l[1],.32,{col:'#c8ff4f',lx:M.sin(t+j),ly:M.cos(t*.7)})}});
+    for(let q=0;q<n;q++){a+=M.sin(t*.8+q*.2+j*2)*.12;x+=M.cos(a)*24;y+=M.sin(a)*24;pts.push([x,y,42-q*.7])}
+    for(const[col,ex]of[['rgba(150,255,200,.85)',9],['#000',0]])pts.forEach(([px,py,wd],q)=>{if(q)ln(g,[[pts[q-1][0],pts[q-1][1]],[px,py]],col,M.max(4,wd)+ex)});
+    pts.forEach(([px,py,wd],q)=>{if(q%2==0&&wd>8){ell(g,px+wd*.45,py,wd*.16,wd*.16,'rgba(190,255,215,.8)')}});
+    if(n>2){const l=pts[n-1];eye(g,l[0],l[1],.45,{col:'#c8ff4f',lx:M.sin(t+j),ly:M.cos(t*.7)})}});
 });
 
 S(3,'Giant Eye',90,'S',(g,t,c,i,w,h)=>{
