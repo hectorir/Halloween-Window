@@ -1,8 +1,8 @@
 # Episode guide
 
-36 scenes, 60 minutes, looping. Layout key: **4-pane** = one picture across all four panes, **Pair** = each window's upper+lower sash is one tall scene (left and right windows run separately), **Solo** = each pane plays its own mini-scene. The meeting rail and wall strip get no light, so characters vanish behind them and reappear on the other side.
+42 scenes, about 65 minutes, looping. Layout key: **4-pane** = one picture across all four panes, **Pair** = each window's upper+lower sash is one tall scene (left and right windows run separately), **Solo** = each pane plays its own mini-scene. The meeting rail and wall strip get no light, so characters vanish behind them and reappear on the other side.
 
-Most scenes repeat a short gag (12–25 s) several times, so anyone passing sees a complete joke.
+In Acts I–IV most scenes repeat a short gag (12–25 s) several times, so anyone passing sees a complete joke. Act V scenes are each one short ghost story, from the ghost's appearance to its exit.
 
 ## Act I: Trick or Treat (about 12 min, cute and funny)
 
@@ -58,4 +58,17 @@ Most scenes repeat a short gag (12–25 s) several times, so anyone passing sees
 | 33 | Music Box | Solo | 90s | LL: a skeleton ballerina spins in a music box. UL: musical notes drift up. UR and LR: candles. |
 | 34 | BOO! | Solo | 100s | Quiet fireflies. Then, every 25 s, a huge ghost bursts into one pane shouting "BOO!". Then four tiny ghosts peek up giggling. |
 | 35 | Fireworks | 4-pane | 110s | Fireworks in round, ring, pumpkin and bat shapes. |
-| 36 | Sweet Dreams | 4-pane | 140s | A single candle burns. "Sweet dreams..." writes itself in one pane, a red "?" appears, and a pair of eyes opens in another. The candle is blown out and everything goes dark. The loop then restarts with the bat swarm. |
+| 36 | Sweet Dreams | 4-pane | 140s | A single candle burns. "Sweet dreams..." writes itself in one pane, a red "?" appears, and a pair of eyes opens in another. The candle is blown out and everything goes dark... but the night isn't over (Act V). |
+
+## Act V: The Night Isn't Over (about 5½ min, eerie 3D ghosts)
+
+Rendered in 3D with three.js (WebGL): translucent, rim-lit apparitions made of light, smoke and particles, on black. Each scene is one short story in which the ghost appears, builds to a peak, then disappears.
+
+| # | Scene | Layout | Length | What you see |
+|---|---|---|---|---|
+| 37 | The Gathering | 4-pane | 60s | Out of the darkness a smoke vortex starts turning in the left window. Glittering motes spiral in and condense into a draped sheet ghost, and its hollow eyes and mouth open. It drifts behind the wall strip into the right window, tilts its head as it notices you, rushes at the glass with its mouth gaping, swerves away, and then dissolves back into the vortex. |
+| 38 | The Last Waltz | 4-pane | 62s | A ghostly chandelier lights its candles (the warm accent of the act). A couple condenses out of the floor mist and waltzes across the lower panes with the 3/4 rise and fall, her skirt flaring and trailing. They thin out as they pass behind the wall strip, and a second, fainter couple phases in and out behind them. Then they rise into the air, spinning, turn into motes that drift up to the chandelier, and the candles go out one by one in curls of smoke. |
+| 39 | Hands on the Glass | 4-pane | 48s | Pale hands drift out of the fog behind the glass and press flat against it, fingers splaying. Frost prints bloom where they touch, and some hands drag down and leave finger streaks. More and more hands arrive in every pane. Then a face rises out of the fog, presses against the glass and gasps silently. Everything pulls back into the fog and the frost fades. |
+| 40 | The Wraith | 4-pane | 52s | An electric-blue wraith (arms outstretched, ragged trailing body) wanders far away in jerky, uncanny stops, then lunges at the glass. Its screaming face fills the upper-right pane, then it swerves away with an echo trail. It crawls back along the lower panes from behind the frame, rises, lunges into the upper-left pane and bursts into blue sparks. |
+| 41 | The Choir | 4-pane | 56s | Faces with smoke tails rise through fog, each moaning silently out of step. All at once they turn to look at you, eyes glinting. They stream into one huge face that fills the left window, with its eyes in the upper pane and its mouth in the lower one. It turns toward you, opens its mouth in a silent scream, then drains away like sand. |
+| 42 | Hide and Seek | 4-pane | 50s | A warm orb bobs in the dark. A little sheet ghost peeks out from behind the wall strip and ducks back, then peeks over the meeting rail. It reappears to play with the orb and gives you a small wave... and then it isn't there. The orb drifts on alone and breaks into fireflies that fade one by one. The loop then restarts with the bat swarm. |

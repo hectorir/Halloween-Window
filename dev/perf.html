@@ -1,5 +1,6 @@
 <!doctype html><meta charset="utf-8"><body style="background:#fff;font:14px monospace"><pre id="o"></pre>
 <script src="../core.js"></script><script src="../sprites.js"></script><script src="../act1.js"></script><script src="../act2.js"></script><script src="../act3.js"></script><script src="../act4.js"></script>
+<script src="../vendor/three.min.js"></script><script src="../ghost3d.js"></script><script src="../act5.js"></script>
 <script>finalize();const c=mk(W,H),g=c.getContext('2d'),cal=[0,1,2,3].map(()=>({dx:0,dy:0,dw:0,dh:0}));let out='';
 SCENES.forEach((s,i)=>{const t0=performance.now();for(let k=0;k<10;k++)renderScene(i,s.dur*(.2+.06*k),g,cal);out+=(i+1)+' '+s.name.padEnd(26)+((performance.now()-t0)/10).toFixed(1)+' ms\n'});
 document.getElementById('o').textContent=out;</script>

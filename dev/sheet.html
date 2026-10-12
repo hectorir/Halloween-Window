@@ -1,5 +1,6 @@
 <!doctype html><meta charset="utf-8"><body style="margin:0;background:#222"><canvas id="s"></canvas>
 <script src="../core.js"></script><script src="../sprites.js"></script><script src="../act1.js"></script><script src="../act2.js"></script><script src="../act3.js"></script><script src="../act4.js"></script>
+<script src="../vendor/three.min.js"></script><script src="../ghost3d.js"></script><script src="../act5.js"></script>
 <script>
 finalize();
 const LIST=QS.list?QS.list.split(',').map(x=>x.split(':').map(Number)):null;const from=+QS.from||0,n=LIST?LIST.length:(+QS.n||12),cols=+QS.cols||4,fr=(QS.f||'.4').split(',').map(Number),tw=+QS.tw||470,th=Math.round(tw*H/W);
@@ -11,5 +12,6 @@ for(let q=0;q<n;q++){const i=LIST?LIST[q][0]-1:from+q;if(i>=SCENES.length)break;
   try{renderScene(i,t,tg,cal);g.drawImage(tmp,x,y,tw,th)}catch(e){g.fillStyle='#600';g.fillRect(x,y,tw,th);g.fillStyle='#fff';g.font='14px monospace';g.fillText((i+1)+' '+s.name+': '+e.message,x+6,y+20);console.log(i+1,s.name,e.stack)}
   g.fillStyle='#ff0';g.font='bold 16px monospace';g.fillText((i+1)+' '+s.name+' t='+t.toFixed(0),x+6,y+16);
   g.strokeStyle='#444';g.strokeRect(x,y,tw,th)}
+if(typeof G3!='undefined'&&G3.errs.length){g.fillStyle='#f44';g.font='13px monospace';G3.errs.join('\n').split('\n').slice(0,30).forEach((l,k)=>g.fillText(l,8,40+k*15))}
 document.title='ready';
 </script>

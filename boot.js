@@ -2,7 +2,7 @@
 // ===== player, controls, calibration =====
 (()=>{
 const cv=document.getElementById('c'),o=cv.getContext('2d'),hud=document.getElementById('hud');
-finalize();
+finalize();if(typeof G3!='undefined')G3.auto=!QS.gl;   // Act V: lower the WebGL resolution if the laptop can't keep up (unless ?gl= fixes it)
 let T=0,paused=!!QS.pause,dbg=!!QS.dbg,cal=!!QS.cal,sel=0,help=false,last=performance.now();
 let mirror=true;try{if(localStorage.hw_mirror==='0')mirror=false}catch(e){}if(QS.mirror==='0')mirror=false;
 let CAL;try{CAL=JSON.parse(localStorage.hw_cal)}catch(e){}
@@ -12,7 +12,7 @@ if(QS.s!=null)T=SCENES[+QS.s].start+(+QS.t||0);
 
 const HELP=`HALLOWEEN WINDOW
 F fullscreen   M mirror (now ${mirror?'ON':'OFF'})   P pause   D debug
-N/B next/previous scene   1-4 jump to act   H this help
+N/B next/previous scene   1-5 jump to act   H this help
 C calibrate: 1-4 pick pane, arrows move, Shift+arrows resize, R reset pane`;
 function overlay(){
   CFG.panes.forEach((p,i)=>{const c=CAL[i],x=p.x+c.dx,y=p.y+c.dy,w=p.w+c.dw,h=p.h+c.dh,col=i==sel?'#ff0':'#fff';
@@ -43,7 +43,7 @@ addEventListener('keydown',e=>{const k=e.key,K=k.toLowerCase();wl();
     if(e.shiftKey){c.dw+=v[0]*st*sg;c.dh+=v[1]*st;if(mirror)c.dx-=v[0]*st*sg}else{c.dx+=v[0]*st*sg;c.dy+=v[1]*st}save()}
   else if(K=='n'||k=='ArrowRight')go(1);
   else if(K=='b'||k=='ArrowLeft')go(-1);
-  else if('1234'.includes(k)){const n=SCENES.findIndex(s=>s.act==+k);if(n>=0)T=SCENES[n].start+.01}
+  else if('12345'.includes(k)){const n=SCENES.findIndex(s=>s.act==+k);if(n>=0)T=SCENES[n].start+.01}
 });
 let lock;async function wl(){try{if(!lock||lock.released)lock=await navigator.wakeLock.request('screen')}catch(e){}}
 wl();document.addEventListener('visibilitychange',()=>{if(!document.hidden)wl()});

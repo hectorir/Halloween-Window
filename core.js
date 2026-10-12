@@ -19,9 +19,8 @@ const CFG={
 // ---- scene registry. kind: A=all 4 panes, P=per window (upper+lower pair), S=per pane ----
 const SCENES=[];
 function S(act,name,dur,kind,fn){SCENES.push({act,name,dur,kind,fn})}
-let TOTAL=3600;
-function finalize(){const sum=SCENES.reduce((a,s)=>a+s.dur,0),k=3600/sum;let at=0;
-  SCENES.forEach(s=>{s.dur*=k;s.start=at;at+=s.dur;s.end=at});TOTAL=at}
+let TOTAL=0;   // loop length = sum of the scene durations as written (about 65 min)
+function finalize(){if(TOTAL)return;let at=0;SCENES.forEach(s=>{s.start=at;at+=s.dur;s.end=at});TOTAL=at}
 function locate(T){T=((T%TOTAL)+TOTAL)%TOTAL;for(let i=0;i<SCENES.length;i++)if(T<SCENES[i].end)return[i,T-SCENES[i].start];return[SCENES.length-1,0]}
 
 // ---- Halloween countdown (laptop clock; ?date=2026-10-20 to preview) ----

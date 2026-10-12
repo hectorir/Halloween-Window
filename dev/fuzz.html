@@ -1,6 +1,8 @@
 <!doctype html><meta charset="utf-8"><pre id="o"></pre>
 <script src="../core.js"></script><script src="../sprites.js"></script><script src="../act1.js"></script><script src="../act2.js"></script><script src="../act3.js"></script><script src="../act4.js"></script>
+<script src="../vendor/three.min.js"></script><script src="../ghost3d.js"></script><script src="../act5.js"></script>
 <script>finalize();const c=mk(W,H),g=c.getContext('2d'),cal=[0,1,2,3].map(()=>({dx:0,dy:0,dw:0,dh:0}));let out='scenes:'+SCENES.length+' total:'+TOTAL.toFixed(1)+'\n',bad=0;
-for(const date of[null,'2026-10-31','2026-11-05']){if(date)QS.date=date;
-SCENES.forEach((s,i)=>{for(let k=0;k<=60;k++){const t=s.dur*k/60;try{renderScene(i,t,g,cal)}catch(e){bad++;if(bad<15)out+='ERR '+(i+1)+' '+s.name+' t='+t.toFixed(1)+' '+e.message+'\n';break}}})}
+const FROM=+QS.from||0,STEPS=+QS.steps||60;for(const date of[null,'2026-10-31','2026-11-05']){if(QS.once&&date)break;if(date)QS.date=date;
+SCENES.forEach((s,i)=>{if(i<FROM)return;for(let k=0;k<=STEPS;k++){const t=s.dur*k/STEPS;try{renderScene(i,t,g,cal)}catch(e){bad++;if(bad<15)out+='ERR '+(i+1)+' '+s.name+' t='+t.toFixed(1)+' '+e.message+'\n';break}}})}
+if(typeof G3!='undefined'){out+='webgl:'+G3.ok+' shaderErrors:'+G3.errs.length+'\n';bad+=G3.errs.length;G3.errs.slice(0,3).forEach(e=>out+=e.slice(0,300)+'\n')}
 out+='errors:'+bad;document.getElementById('o').textContent=out;</script>

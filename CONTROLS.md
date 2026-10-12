@@ -9,7 +9,7 @@ Click the page once first, so the keyboard works.
 | `P` | Pause / resume |
 | `N` or `→` | Next scene |
 | `B` or `←` | Previous scene |
-| `1` `2` `3` `4` | Jump to the start of Act I / II / III / IV |
+| `1` `2` `3` `4` `5` | Jump to the start of Act I / II / III / IV / V |
 | `D` | Debug overlay: act, scene, time in scene, position in the loop, fps |
 | `H` | Help overlay |
 | `C` | Calibration mode on/off |
@@ -45,6 +45,7 @@ Add to the end of the address, for example `index.html?s=12&t=30&pause=1`.
 | `date=2026-10-20` | Pretend today is this date, for the countdown |
 | `dbg=1` / `cal=1` | Start with the debug overlay / calibration mode on |
 | `still=1` | Draw one frame and stop |
+| `gl=0.5` | Act V (WebGL) internal resolution, 0.2–1 (default 0.6). Setting it turns off the automatic slow-laptop downscaling. |
 
 ## Kiosk launch (macOS)
 
