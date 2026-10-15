@@ -9,6 +9,8 @@ Click the page once first, so the keyboard works.
 | `P` | Pause / resume |
 | `N` or `→` | Next scene |
 | `B` or `←` | Previous scene |
+| `Page Down` / `Page Up` | Next / previous scene. These are what a Logitech R400 clicker's right / left buttons send. |
+| `F5` | Pause / resume (the R400's start button), so it can't reload the page mid-show |
 | `1` `2` `3` `4` `5` | Jump to the start of Act I / II / III / IV / V |
 | `D` | Debug overlay: act, scene, time in scene, position in the loop, fps |
 | `H` | Help overlay |

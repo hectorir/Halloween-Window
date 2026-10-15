@@ -41,8 +41,9 @@ addEventListener('keydown',e=>{const k=e.key,K=k.toLowerCase();wl();
   else if(cal&&K=='r'){CAL[sel]={dx:0,dy:0,dw:0,dh:0};save()}
   else if(cal&&k.startsWith('Arrow')){e.preventDefault();const c=CAL[sel],st=e.shiftKey?2:2,v={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[k],sg=mirror?-1:1;
     if(e.shiftKey){c.dw+=v[0]*st*sg;c.dh+=v[1]*st;if(mirror)c.dx-=v[0]*st*sg}else{c.dx+=v[0]*st*sg;c.dy+=v[1]*st}save()}
-  else if(K=='n'||k=='ArrowRight')go(1);
-  else if(K=='b'||k=='ArrowLeft')go(-1);
+  else if(K=='n'||k=='ArrowRight'||k=='PageDown'){e.preventDefault();go(1)}   // PageDown/PageUp = Logitech R400 clicker's right/left buttons
+  else if(K=='b'||k=='ArrowLeft'||k=='PageUp'){e.preventDefault();go(-1)}
+  else if(k=='F5'){e.preventDefault();paused=!paused}   // clicker's start button: pause instead of reloading the page
   else if('12345'.includes(k)){const n=SCENES.findIndex(s=>s.act==+k);if(n>=0)T=SCENES[n].start+.01}
 });
 let lock;async function wl(){try{if(!lock||lock.released)lock=await navigator.wakeLock.request('screen')}catch(e){}}

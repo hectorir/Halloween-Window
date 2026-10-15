@@ -110,7 +110,8 @@ Full reference: **[CONTROLS.md](CONTROLS.md)**.
 | `F` | Fullscreen |
 | `M` | Mirror on/off (on by default, saved) |
 | `P` | Pause |
-| `N` / `B` | Next / previous scene |
+| `N` / `B` | Next / previous scene (also `→`/`←`, and `Page Down`/`Page Up` for a Logitech R400 clicker) |
+| `F5` | Pause (clicker start button) |
 | `1`–`5` | Jump to an act |
 | `D` / `H` | Debug overlay with fps / help overlay |
 | `C` | Calibration mode |
